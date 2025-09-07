@@ -1,5 +1,5 @@
 """
-Comprehensive Neural Network Optimizer Energy Efficiency Study
+Neural Network Optimizer Energy Efficiency Study
 ==============================================================
 
 This script conducts a systematic study of energy consumption and performance 

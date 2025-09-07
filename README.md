@@ -10,7 +10,7 @@ Modern machine learning training consumes significant computational resources, r
 
 ## Paper
 
-**Title**: A Comprehensive Analysis of Optimizer Choice on Energy Efficiency and Performance in Neural Network Training: Evidence from 360 Controlled Experiments
+**Title**: An Analysis of Optimizer Choice on Energy Efficiency and Performance in Neural Network Training
 
 **Author**: Tom Almog, University of Waterloo
 
@@ -134,7 +134,7 @@ If you use this work, please cite:
 
 ```bibtex
 @article{almog2025optimizer,
-  title={A Comprehensive Analysis of Optimizer Choice on Energy Efficiency and Performance in Neural Network Training: Evidence from 360 Controlled Experiments},
+  title={An Analysis of Optimizer Choice on Energy Efficiency and Performance in Neural Network Training},
   author={Almog, Tom},
   institution={University of Waterloo},
   year={2025}
