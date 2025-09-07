@@ -39,7 +39,7 @@ Email: talmog@uwaterloo.ca}
 \maketitle
 
 \begin{abstract}
-As machine learning models grow increasingly complex and computationally demanding, understanding the environmental impact of training decisions becomes critical for sustainable AI development. This paper presents a comprehensive empirical study investigating the relationship between optimizer choice and energy efficiency in neural network training. We conducted 360 controlled experiments across three benchmark datasets (MNIST, CIFAR-10, CIFAR-100) using eight popular optimizers (SGD, Adam, AdamW, RMSprop, Adagrad, Adadelta, Adamax, NAdam) with 15 random seeds each. Using CodeCarbon for precise energy tracking on Apple M1 Pro hardware, we measured training duration, peak memory usage, CO$_2$ emissions, and final model performance. Our findings reveal significant trade-offs between training speed, accuracy, and environmental impact that vary substantially across datasets and model complexity. We identify AdamW and NAdam as consistently efficient choices, while SGD demonstrates superior performance on complex datasets despite higher emissions. Statistical analysis confirms significant differences between optimizers across all metrics (p < 0.01). These results provide actionable insights for practitioners seeking to balance performance and sustainability in machine learning workflows.
+As machine learning models grow increasingly complex and computationally demanding, understanding the environmental impact of training decisions becomes critical for sustainable AI development. This paper presents a comprehensive empirical study investigating the relationship between optimizer choice and energy efficiency in neural network training. We conducted 360 controlled experiments across three benchmark datasets (MNIST, CIFAR-10, CIFAR-100) using eight popular optimizers (SGD, Adam, AdamW, RMSprop, Adagrad, Adadelta, Adamax, NAdam) with 15 random seeds each. Using CodeCarbon for precise energy tracking on Apple M1 Pro hardware, we measured training duration, peak memory usage, CO$_2$ emissions, and final model performance. Our findings reveal substantial trade-offs between training speed, accuracy, and environmental impact that vary across datasets and model complexity. We identify AdamW and NAdam as consistently efficient choices, while SGD demonstrates superior performance on complex datasets despite higher emissions. These results provide actionable insights for practitioners seeking to balance performance and sustainability in machine learning workflows.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -59,11 +59,11 @@ Previous studies on ML energy efficiency have primarily focused on model archite
 This paper makes several key contributions to understanding the energy efficiency implications of optimizer choice:
 
 \begin{itemize}
-    \item \textbf{Comprehensive empirical evaluation}: We present results from 360 controlled experiments across three datasets with varying complexity, using eight popular optimizers with robust statistical validation (15 seeds per configuration).
+    \item \textbf{Comprehensive empirical evaluation}: We present results from 360 controlled experiments across three datasets with varying complexity, using eight popular optimizers with 15 random seeds per configuration.
     
     \item \textbf{Multi-dimensional analysis}: We examine the relationships between optimizer choice and multiple metrics including accuracy, training time, CO$_2$ emissions, memory usage, and convergence behavior.
     
-    \item \textbf{Statistical rigor}: We employ Friedman tests and pairwise comparisons to establish statistical significance of differences between optimizers, addressing a key limitation in prior work.
+    \item \textbf{Robust evaluation}: We use 15 random seeds per configuration to ensure reliable and reproducible results, addressing a key limitation in prior work.
     
     \item \textbf{Practical guidelines}: We provide actionable recommendations for practitioners to make informed optimizer choices considering both performance and environmental impact.
     
@@ -194,15 +194,7 @@ We collected comprehensive metrics for each experiment:
     \item \textbf{Convergence}: Number of epochs to reach 95\% of final accuracy
 \end{itemize}
 
-Statistical significance was assessed using non-parametric methods appropriate for our experimental design:
-
-\begin{itemize}
-    \item \textbf{Friedman test}: Overall differences between optimizers within each dataset
-    \item \textbf{Wilcoxon signed-rank test}: Pairwise comparisons between optimizers
-    \item \textbf{Effect size}: Cohen's d for magnitude of differences
-\end{itemize}
-
-All statistical tests used $\alpha$ = 0.05 significance level with Bonferroni correction for multiple comparisons.
+Results are reported as means and standard deviations across the 15 experimental runs to demonstrate the consistency and reliability of the findings.
 
 \section{Results}
 
@@ -299,29 +291,6 @@ The emissions rate analysis reveals that certain optimizers consistently produce
 
 Conversely, optimizers like AdamW and NAdam maintain relatively low emissions rates while achieving competitive performance, supporting their characterization as environmentally efficient choices.
 
-\subsection{Statistical Significance Analysis}
-
-Table \ref{tab:statistical_significance} presents results from Friedman tests examining overall differences between optimizers within each dataset-metric combination.
-
-\begin{table}[htbp]
-\centering
-\caption{Statistical Significance Summary (Friedman Tests)}
-\label{tab:statistical_significance}
-\begin{tabular}{@{}llrlcc@{}}
-\toprule
-Dataset & Metric & Groups & Friedman $\chi^2$ & p-value & Significant \\
-\midrule
-MNIST & Accuracy & 8 & 24.306 & 0.0010 & Yes \\
-MNIST & Emissions & 8 & 6.622 & 0.4692 & No \\
-CIFAR-10 & Accuracy & 8 & 46.609 & <0.0001 & Yes \\
-CIFAR-10 & Emissions & 8 & 17.289 & 0.0156 & Yes \\
-CIFAR-100 & Accuracy & 8 & 57.186 & <0.0001 & Yes \\
-CIFAR-100 & Emissions & 8 & 44.022 & <0.0001 & Yes \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-The statistical analysis confirms significant differences between optimizers for accuracy across all datasets. For emissions, differences become statistically significant as dataset complexity increases, suggesting that optimizer choice has more pronounced environmental implications for challenging problems.
 
 \subsection{Efficiency Rankings}
 
