@@ -216,7 +216,7 @@ Dataset & Optimizer & Accuracy & Duration (s) & Emissions (kg) & Epochs \\
 & Adagrad & 0.9783 $\pm$ 0.0039 & 19.6 $\pm$ 3.7 & 1.32e-06 $\pm$ 3.97e-07 & 19.7 \\
 & Adam & 0.9803 $\pm$ 0.0031 & 15.6 $\pm$ 3.7 & 8.91e-07 $\pm$ 4.98e-07 & 15.8 \\
 & AdamW & 0.9799 $\pm$ 0.0040 & 14.3 $\pm$ 2.7 & 1.09e-06 $\pm$ 7.14e-07 & 14.2 \\
-& AdamaxV & 0.9800 $\pm$ 0.0033 & 18.1 $\pm$ 4.6 & 1.22e-06 $\pm$ 5.32e-07 & 17.7 \\
+& Adamax & 0.9800 $\pm$ 0.0033 & 18.1 $\pm$ 4.6 & 1.22e-06 $\pm$ 5.32e-07 & 17.7 \\
 & NAdam & 0.9808 $\pm$ 0.0032 & 14.8 $\pm$ 4.1 & 8.58e-07 $\pm$ 4.93e-07 & 14.2 \\
 & RMSprop & 0.9796 $\pm$ 0.0036 & 15.3 $\pm$ 3.9 & 9.53e-07 $\pm$ 6.02e-07 & 15.6 \\
 & SGD & 0.9784 $\pm$ 0.0044 & 17.6 $\pm$ 4.7 & 1.03e-06 $\pm$ 4.53e-07 & 17.3 \\
@@ -226,7 +226,7 @@ Dataset & Optimizer & Accuracy & Duration (s) & Emissions (kg) & Epochs \\
 & Adagrad & 0.5165 $\pm$ 0.0672 & 92.1 $\pm$ 26.1 & 1.45e-05 $\pm$ 4.31e-06 & 36.9 \\
 & Adam & 0.6513 $\pm$ 0.0481 & 102.0 $\pm$ 21.3 & 1.68e-05 $\pm$ 3.55e-06 & 39.5 \\
 & AdamW & 0.6267 $\pm$ 0.0464 & 89.4 $\pm$ 23.1 & 1.45e-05 $\pm$ 3.92e-06 & 34.7 \\
-& AdamaxV & 0.6653 $\pm$ 0.0414 & 114.7 $\pm$ 22.9 & 1.89e-05 $\pm$ 3.65e-06 & 43.5 \\
+& Adamax & 0.6653 $\pm$ 0.0414 & 114.7 $\pm$ 22.9 & 1.89e-05 $\pm$ 3.65e-06 & 43.5 \\
 & NAdam & 0.6385 $\pm$ 0.0502 & 103.5 $\pm$ 21.2 & 1.71e-05 $\pm$ 3.66e-06 & 39.3 \\
 & RMSprop & 0.5607 $\pm$ 0.0957 & 84.0 $\pm$ 27.5 & 1.36e-05 $\pm$ 4.65e-06 & 33.3 \\
 & SGD & 0.6216 $\pm$ 0.0680 & 88.9 $\pm$ 28.3 & 1.46e-05 $\pm$ 5.03e-06 & 36.2 \\
@@ -236,7 +236,7 @@ Dataset & Optimizer & Accuracy & Duration (s) & Emissions (kg) & Epochs \\
 & Adagrad & 0.0336 $\pm$ 0.0153 & 43.6 $\pm$ 29.8 & 3.88e-07 $\pm$ 3.06e-07 & 17.5 \\
 & Adam & 0.0930 $\pm$ 0.0305 & 65.3 $\pm$ 24.0 & 2.10e-06 $\pm$ 3.26e-06 & 26.1 \\
 & AdamW & 0.0891 $\pm$ 0.0263 & 61.8 $\pm$ 27.5 & 5.94e-07 $\pm$ 2.93e-07 & 24.1 \\
-& AdamaxV & 0.0989 $\pm$ 0.0511 & 82.6 $\pm$ 43.8 & 8.11e-07 $\pm$ 4.54e-07 & 31.3 \\
+& Adamax & 0.0989 $\pm$ 0.0511 & 82.6 $\pm$ 43.8 & 8.11e-07 $\pm$ 4.54e-07 & 31.3 \\
 & NAdam & 0.0441 $\pm$ 0.0128 & 42.6 $\pm$ 16.1 & 4.15e-07 $\pm$ 1.79e-07 & 16.2 \\
 & RMSprop & 0.0620 $\pm$ 0.0580 & 53.9 $\pm$ 46.5 & 5.06e-07 $\pm$ 4.93e-07 & 21.4 \\
 & SGD & 0.2061 $\pm$ 0.0493 & 95.9 $\pm$ 29.4 & 1.60e-05 $\pm$ 5.42e-06 & 38.9 \\
@@ -257,9 +257,9 @@ Figure \ref{fig:accuracy_vs_emissions} illustrates the fundamental trade-off bet
 
 For MNIST, all optimizers achieve high accuracy (>97.8\%) with relatively small differences in emissions. The relationship between performance and emissions is weak, suggesting that environmental considerations can guide optimizer choice without significant accuracy compromise.
 
-CIFAR-10 results show a clearer performance hierarchy, with AdamaxV achieving the highest accuracy (66.53%) but also producing higher emissions. Interestingly, AdamW demonstrates an attractive balance, achieving competitive accuracy (62.67%) while maintaining relatively low emissions.
+CIFAR-10 results show a clearer performance hierarchy, with Adamax achieving the highest accuracy (66.53\%) but also producing higher emissions. Interestingly, AdamW demonstrates an attractive balance, achieving competitive accuracy (62.67\%) while maintaining relatively low emissions.
 
-CIFAR-100 presents the most complex pattern, with SGD dramatically outperforming other optimizers in accuracy (20.61% vs. <10% for most others) but at significantly higher environmental cost. This suggests that for challenging datasets, the performance benefits of certain optimizers may justify increased emissions.
+CIFAR-100 presents the most complex pattern, with SGD dramatically outperforming other optimizers in accuracy (20.61\% vs. <10\% for most others) but at significantly higher environmental cost. This suggests that for challenging datasets, the performance benefits of certain optimizers may justify increased emissions.
 
 \subsection{Training Duration Analysis}
 
@@ -274,7 +274,7 @@ Figure \ref{fig:training_duration} presents training duration distributions acro
 
 NAdam and AdamW consistently demonstrate the fastest convergence across datasets, with median training times significantly lower than other optimizers. This efficiency appears to be a robust characteristic, as evidenced by the relatively small interquartile ranges.
 
-AdamaxV shows consistently longer training times, particularly pronounced on CIFAR-10 and CIFAR-100. The high variability in some optimizers (notably Adadelta on CIFAR-100) suggests sensitivity to initialization and dataset characteristics.
+Adamax shows consistently longer training times, particularly pronounced on CIFAR-10 and CIFAR-100. The high variability in some optimizers (notably Adadelta on CIFAR-100) suggests sensitivity to initialization and dataset characteristics.
 
 \subsection{Emissions Rate Analysis}
 
@@ -310,7 +310,7 @@ Dataset & Optimizer & Acc. Rank & Eff. Rank & Speed Rank \\
 & Adagrad & 8 & 8 & 8 \\
 & Adam & 3 & 2 & 5 \\
 & AdamW & 5 & 6 & 1 \\
-& AdamaxV & 4 & 7 & 7 \\
+& Adamax & 4 & 7 & 7 \\
 & NAdam & 2 & 1 & 2 \\
 & RMSprop & 6 & 4 & 4 \\
 & SGD & 7 & 5 & 6 \\
@@ -320,7 +320,7 @@ Dataset & Optimizer & Acc. Rank & Eff. Rank & Speed Rank \\
 & Adagrad & 8 & 7 & 8 \\
 & Adam & 2 & 5 & 5 \\
 & AdamW & 4 & 1 & 1 \\
-& AdamaxV & 1 & 8 & 7 \\
+& Adamax & 1 & 8 & 7 \\
 & NAdam & 3 & 6 & 6 \\
 & RMSprop & 6 & 3 & 3 \\
 & SGD & 5 & 2 & 2 \\
@@ -330,7 +330,7 @@ Dataset & Optimizer & Acc. Rank & Eff. Rank & Speed Rank \\
 & Adagrad & 8 & 6 & 8 \\
 & Adam & 3 & 7 & 3 \\
 & AdamW & 4 & 1 & 2 \\
-& AdamaxV & 2 & 3 & 4 \\
+& Adamax & 2 & 3 & 4 \\
 & NAdam & 7 & 5 & 7 \\
 & RMSprop & 6 & 2 & 6 \\
 & SGD & 1 & 8 & 1 \\
