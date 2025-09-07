@@ -133,11 +133,11 @@ Pre-computed results are available in `data/experimental_data/`. Visualization c
 If you use this work, please cite:
 
 ```bibtex
-@article{almog2024optimizer,
+@article{almog2025optimizer,
   title={A Comprehensive Analysis of Optimizer Choice on Energy Efficiency and Performance in Neural Network Training: Evidence from 360 Controlled Experiments},
   author={Almog, Tom},
   institution={University of Waterloo},
-  year={2024}
+  year={2025}
 }
 ```
 
