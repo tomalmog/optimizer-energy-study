@@ -153,7 +153,7 @@ Contributions welcome:
 
 Tom Almog  
 University of Waterloo  
-t2almog@uwaterloo.ca
+talmog@uwaterloo.ca
 
 ## License
 
@@ -170,9 +170,8 @@ MIT License - see LICENSE file for details.
 Based on experimental evidence:
 
 1. **Default choice**: Use AdamW when environmental impact matters
-2. **Simple tasks**: Prioritize efficiency over minor accuracy differences  
-3. **Complex tasks**: Weigh performance gains against environmental costs
-4. **Research settings**: SGD may justify higher emissions for challenging datasets
-5. **Production**: Small efficiency gains compound over repeated training
+2. **Research settings**: SGD may justify higher emissions for challenging datasets
+3. **Simple tasks**: Prioritize efficiency over minor accuracy differences  
+4. **Complex tasks**: Weigh performance gains against environmental costs
 
 See paper for detailed analysis and recommendations.

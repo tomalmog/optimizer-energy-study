@@ -98,7 +98,7 @@ In the software engineering domain, Pinto and Castor \cite{pinto2017energy} demo
 
 \subsection{Experimental Design}
 
-Our experimental design follows a factorial approach with three primary factors: dataset (3 levels), optimizer (8 levels), and random seed (15 levels), resulting in 360 total experiments. This design enables robust statistical analysis while controlling for various sources of variability.
+Our experimental design follows a factorial approach with three primary factors: dataset (3 levels), optimizer (8 levels), and random seed (15 levels), resulting in 360 total experiments. This design enables robust analysis while controlling for various sources of variability.
 
 \subsubsection{Datasets and Model Architectures}
 
@@ -183,7 +183,7 @@ Each experiment followed a standardized training protocol to ensure consistency:
 
 Early stopping was implemented with patience of 5 epochs to prevent overfitting and reflect realistic training practices. Maximum epoch limits were set to 50 for vision tasks to balance experimental time with convergence requirements.
 
-\subsection{Metrics and Statistical Analysis}
+\subsection{Metrics and Analysis Framework}
 
 We collected comprehensive metrics for each experiment:
 
@@ -372,11 +372,11 @@ Our analysis reveals that total emissions and training duration are imperfectly 
 
 This study advances the methodological rigor of ML sustainability research in several ways:
 
-\subsubsection{Statistical Robustness}
+\subsubsection{Experimental Robustness}
 
-Our use of 15 random seeds per configuration and non-parametric statistical tests addresses a critical limitation in prior work. Many previous studies used insufficient sample sizes or inappropriate statistical methods, limiting the reliability of their conclusions.
+Our use of 15 random seeds per configuration addresses a critical limitation in prior work. Many previous studies used insufficient sample sizes, limiting the reliability of their conclusions.
 
-The Friedman test results confirm that optimizer differences are statistically significant rather than due to random variation, providing confidence in our recommendations.
+The consistent patterns observed across multiple random seeds provide confidence in our recommendations.
 
 \subsubsection{Comprehensive Metric Collection}
 
@@ -434,7 +434,7 @@ Our key findings include: (1) AdamW consistently provides the best balance of pe
 
 These results have immediate practical implications for the machine learning community. As the field grapples with its environmental impact, optimizer choice represents a actionable lever for reducing carbon emissions without requiring fundamental changes to models or infrastructure.
 
-The statistical rigor of our approach, with robust significance testing and comprehensive metric collection, establishes a methodological standard for future sustainability research in machine learning. Our reproducible experimental framework enables extension to other domains and hardware platforms.
+The methodological rigor of our approach, with comprehensive metric collection and robust experimental design, establishes a standard for future sustainability research in machine learning. Our reproducible experimental framework enables extension to other domains and hardware platforms.
 
 Looking forward, the integration of environmental considerations into fundamental algorithmic choices represents a critical step toward sustainable AI development. This work provides both the empirical foundation and practical guidance needed to make informed decisions that balance performance objectives with environmental responsibility.
 
