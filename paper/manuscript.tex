@@ -3,9 +3,7 @@
 % Essential packages
 \usepackage{graphicx}
 \usepackage{booktabs}
-\usepackage{hyperref}
-\usepackage{caption}
-\usepackage{subcaption}
+\usepackage{iftex}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -13,9 +11,12 @@
 \usepackage{algorithmic}
 \usepackage{multirow}
 \usepackage{array}
-\usepackage{balance}
+\ifPDFTeX
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\fi
+\usepackage{microtype}
+\usepackage{hyperref}
 
 % Color for hyperlinks
 \hypersetup{
@@ -448,8 +449,11 @@ The authors thank the University of Waterloo for providing computational resourc
 
 All experimental data, analysis scripts, and detailed results are available at: \url{https://github.com/tomalmog/optimizer-energy-study}. The CodeCarbon tracking data and complete experimental logs are included to enable full reproduction of our analysis.
 
-\balance
-\bibliographystyle{IEEEtran}
-\bibliography{references}
+\IfFileExists{manuscript.bbl}{%
+\input{manuscript.bbl}%
+}{%
+\bibliographystyle{IEEEtran}%
+\bibliography{references}%
+}
 
 \end{document}
