@@ -1,3 +1,7 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)]()
+[![arXiv](https://img.shields.io/badge/arXiv-coming--soon-b31b1b.svg)]()
+
 # Energy Efficiency in Neural Network Training: An Optimizer Comparison Study
 
 This repository contains research investigating the relationship between optimizer choice and energy consumption in neural network training. The study examines performance and environmental impact across multiple datasets and optimization algorithms.
@@ -15,6 +19,12 @@ Modern machine learning training consumes significant computational resources, r
 **Author**: Tom Almog, University of Waterloo
 
 **Abstract**: As machine learning models grow increasingly complex and computationally demanding, understanding the environmental impact of training decisions becomes critical for sustainable AI development. This paper presents an empirical study investigating the relationship between optimizer choice and energy efficiency in neural network training through 360 controlled experiments across three benchmark datasets using eight popular optimizers with robust statistical validation.
+
+## Publications
+
+- **Tom Almog.** *An Analysis of Optimizer Choice on Energy Efficiency and Performance in Neural Network Training.*  
+  - Submitted to *Sustainable Computing: Informatics and Systems* (Manuscript ID: SUSCOM-D-25-02415), 2025.  
+  - Preprint available on [arXiv](https://arxiv.org/) (link coming soon).
 
 ## Key Findings
 
@@ -40,9 +50,9 @@ SGD, Adam, AdamW, RMSprop, Adagrad, Adadelta, Adamax, NAdam
 - **360 total experiments**: 3 datasets × 8 optimizers × 15 random seeds
 - **Robust statistics**: 15 seeds per configuration for statistical validation
 - **Comprehensive metrics**: accuracy, training time, CO2 emissions, memory usage
-- **Statistical analysis**: Friedman tests with Bonferroni correction for multiple comparisons
 
 ## Repository Structure
+This structure is subject to change.
 
 ```
 optimizer-energy-study/
@@ -121,12 +131,6 @@ Pre-computed results are available in `data/experimental_data/`. Visualization c
 - **Tool**: CodeCarbon 3.0.4 with macOS powermetrics
 - **Metrics**: CPU/GPU power, CO2 emissions, memory usage
 - **Carbon intensity**: Ontario, Canada grid factor
-
-### Statistical Methods
-- Friedman tests for overall optimizer differences
-- Wilcoxon signed-rank tests for pairwise comparisons  
-- Bonferroni correction for multiple testing
-- Effect size analysis with Cohen's d
 
 ## Citation
 
